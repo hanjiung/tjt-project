@@ -35,7 +35,7 @@ class _LoginState extends State<Login>{
                             labelText: '아이디를 입력하세요s'
                             ),
                           controller:Controller,),
-                          ];
+                          ]
                         ),
                     Row(
                       children:[
@@ -46,9 +46,9 @@ class _LoginState extends State<Login>{
                           labelText: '아이디를 입력하세요s'
                         ),
                         controller:Controller,),
-                      ];
+                      ]
                     ),
-                ];
+                ]
                 ),
                   ElevatedButton(
                     onPressed:(){},
@@ -60,11 +60,11 @@ class _LoginState extends State<Login>{
             Row(
               children:[
                 ElevatedButton(
-                onPressed(){},
+                onPressed:(){},
                 child: Text('회원가입'),
               ),
                 ElevatedButton(
-                onPressed(){},
+                onPressed:(){},
                 child: Text('비밀번호를 잊어버렸습니다.'),
               ),
               ],
