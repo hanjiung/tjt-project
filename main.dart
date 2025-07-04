@@ -6,7 +6,7 @@ void main() {
 }
 
 class Login extends StatefulWidget{
-  const login({Key? key}) : super(key: key);
+  const Login({Key? key}) : super(key: key);
 
   @override
   State<Login> createState() => _LoginState();
