@@ -23,79 +23,101 @@ class _LoginState extends State<Login>{
   }
   @override
   Widget build(BuildContext){
-    return Scaffold(
-    
-      body: Container(
-        child: Column(
-          mainAxisAlignment: mainAxisAlignment.center,
-          children: [
-            Image.asset(icon),
-            Text(
-              "Log In"
-            ),
-            Container(
-              child:Row(
-                children:[
-                   Column(
-                    children:[
-                      Row(
-                        children:[
-                          Text("ID"),
-                          TextField(
-                            decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                            labelText: '아이디를 입력하세요'
-                            ),
-                          controller:_idController,
-                          ),
-                          ]
-                        ),
-                    Row(
-                      children:[
-                        Text("PW"),
-                        TextField(
-                          decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          labelText: '비밀번호를 입력하세요'
-                        ),
-                        obscureText: true,
-                        controller:_pwController,
-                        ),
-                      ]
-                    ),
-                ]
-                ),
-                  ElevatedButton(
-                    onPressed:(){
-                      // 아이디와 비밀 번호 비교후 리스트 피이지로 이동, 제이슨 객체형태로 보냄. 
-                      Navigator.push(context,MaterialPageRoute(builder:(context)=> PostList()),);
-                    },
-                    child: Text('로그인'),
-                  ),
-                ],
-              ),
-            ),
-            Row(
-              children:[
-                ElevatedButton(
-                onPressed:(){
-                  //회원 가입 페이지로 이동
-                  Navigator.push(context,MaterialPageRoute(builder(context)=> Register()),);
-                  
-                },
-                child: Text('회원가입'),
-              ),
-              //   ElevatedButton(
-              //   onPressed:(){},
-              //   child: Text('비밀번호를 잊어버렸습니다.'),
-              // ),
-              ],
+    return MaterialApp(
+      home: Scaffold(
 
-            ),
-          ],
-        ),
+        body: Container(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                width:MediaQuery.of(context).size.width*0.8,
+                height:MediaQuery.of(context).size.height*0.3,
+                child: Column(
+                  children: [
+                    Image.asset( 'assets/images/logo.jpg'),
+                    Text(
+                        "Log In"
+                    ),
+                  ],
+                ),
+              ),
+
+              Container(
+                width:MediaQuery.of(context).size.width*0.8,
+                height:MediaQuery.of(context).size.height*0.4,
+                child:Row(
+                  children:[
+                    Expanded(child: Column(
+                        children:[
+                          Row(
+                              children:[
+                                Text("ID"),
+                                Expanded(child:  TextField(
+                                  decoration: InputDecoration(
+                                      border: OutlineInputBorder(),
+                                      labelText: '아이디를 입력하세요'
+                                  ),
+                                  controller:_idController,
+                                ),),
+
+                              ]
+                          ),
+                          Row(
+                              children:[
+                                Text("PW"),
+                                Expanded(child:   TextField(
+                                  decoration: InputDecoration(
+                                      border: OutlineInputBorder(),
+                                      labelText: '비밀번호를 입력하세요'
+                                  ),
+                                  obscureText: true,
+                                  controller:_pwController,
+                                ),),
+
+                              ]
+                          ),
+                        ]
+                    ),
+                    ),
+                    ElevatedButton(
+                      onPressed:(){
+                        // 아이디와 비밀 번호 비교후 리스트 피이지로 이동, 제이슨 객체형태로 보냄.
+                        Navigator.push(context,MaterialPageRoute(builder:(context)=> PostList()),);
+                      },
+                      child: Text('로그인'),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                width:MediaQuery.of(context).size.width*0.8,
+                height:MediaQuery.of(context).size.height*0.2,
+                child: Row(
+                  children:[
+                    ElevatedButton(
+                      onPressed:(){
+                        //회원 가입 페이지로 이동
+                        Navigator.push(context,MaterialPageRoute(builder: (context)=> Register(),));
+
+                      },
+                      child: Text('회원가입'),
+                    ),
+                    //   ElevatedButton(
+                    //   onPressed:(){},
+                    //   child: Text('비밀번호를 잊어버렸습니다.'),
+                    // ),
+                  ],
+
+                ),
+              ),
+
+            ],
+          ),
+        ) ,
       ) ,
     );
   }
 }
+
 
